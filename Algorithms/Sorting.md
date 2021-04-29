@@ -38,6 +38,36 @@ Sorting...!
 
 <br>
 
+``` java
+import java.io.*;
+import java.util.*;
+
+public class InsertionSort {
+	public static void main(String[] args) throws IOException {		
+        int[] ary = {7, 5, 9, 0, 3, 1, 6, 2, 4, 8};
+
+        for (int i = 1; i < ary.length; i++) {
+            for(int j = i; j > 0; j--){
+                if(ary[j] < ary[j-1]){
+                    int temp = ary[j];
+                    ary[j] = ary[j-1];
+                    ary[j-1] = temp;
+                }else break;
+            }
+        }
+
+        for (int i = 0; i < ary.length; i++) {
+            System.out.print(ary[i] + ", ");
+        }
+		
+	}
+}
+
+```
+
+
+<br>
+
 ### 특징
 
 1. 최선의 경우 O(n)의 시간복잡도를 갖는다. (거의 정렬 되어 있는 상태)
@@ -53,6 +83,35 @@ Sorting...!
 > 삽입 정렬은 특정 기준을 잡고 기준점 우측으로 기준값보다 가장 큰/작은 값을 선정하여 정렬 한다.<br>
 
 ##### Ex) 오름차순 정렬 할 때 29를 기준으로 잡고 우측으로 가장 작은 값을 찾는다. 이후 기준값과 위치를 바꾼다. 
+
+<br>
+
+```java
+import java.io.*;
+import java.util.*;
+
+public class SelectionSort {
+	
+	public static void main(String[] args) throws IOException {		
+        int[] ary = {7, 5, 9, 0, 3, 1, 6, 2, 4, 8};
+
+        for (int i = 0; i < ary.length; i++) {
+        	int min_index = i;
+        	for(int j = i+1; j < ary.length; j++) {
+        		if(ary[min_index] > ary[j]) {
+        			min_index = j;
+        		}
+        	}
+        	
+        	int temp = ary[i];
+        	ary[i] = ary[min_index];
+        	ary[min_index] = temp;
+        }
+		
+	}
+}
+```
+
 
 <br>
 
@@ -75,6 +134,55 @@ Sorting...!
 
 <br>
 
+```java
+import java.io.*;
+import java.util.*;
+
+public class QuickSort {
+	
+	public static void quick(int[] ary, int start, int end) {
+		if(start >= end) return;
+		//generally pivot is first;
+		int pivot = start;
+		int left = start + 1;
+		int right = end;
+		
+		while(left <= right) {
+			//repeat if find data that larger than pivot
+			while(left <= end && ary[left] <= ary[pivot]) left++;
+			//repeat if find data that smaller than pivot
+			while(right > start && ary[right] >= ary[pivot]) right--;
+			
+			//cross case
+			if(left > right) {
+				int temp = ary[pivot];
+				ary[pivot] = ary[right];
+				ary[right] = temp;
+			}else {
+				int temp = ary[left];
+				ary[left] = ary[right];
+				ary[right] = temp;
+			}
+			
+			quick(ary, start, right - 1);
+			quick(ary, right + 1, end);
+		}
+	}
+	
+	public static void main(String[] args) throws IOException {		
+        int[] ary = {7, 5, 9, 0, 3, 1, 6, 2, 4, 8};
+
+        quick(ary, 0, ary.length-1);
+
+        for (int i = 0; i < ary.length; i++) {
+            System.out.print(ary[i] + ", ");
+        }
+	}
+}
+```
+
+<br>
+
 ### 특징
 
 1. 대부분 정렬에서 효율적으로 작용한다.
@@ -89,6 +197,32 @@ Sorting...!
 
 ![s](./img/counting.gif)
 > 이미지 참고..ㅠ<br>
+
+<br>
+
+```java
+import java.io.*;
+import java.util.*;
+
+public class CountingSort {
+	public static void main(String[] args) throws IOException {		
+        int[] ary = {7, 5, 9, 0, 3, 1, 6, 2, 9, 1, 4, 8, 0, 5, 2};
+        int[] cnt = new int[10];
+        
+        for(int i = 0; i < ary.length; i++) {
+        	cnt[ary[i]]++;
+        }
+
+        for (int i = 0; i < cnt.length; i++) {
+        	for(int j = 0; j < cnt[i]; j++) {
+        		System.out.print(i + " ");
+        	}
+        }
+		
+	}
+}
+```
+
 
 <br>
 

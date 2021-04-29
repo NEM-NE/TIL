@@ -1,4 +1,4 @@
-Sorting...!
+Euclidean algorthims..!
 =======================
 
 ## 1. 유클리드 알고리즘이란?
