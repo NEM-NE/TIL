@@ -139,3 +139,7 @@ HTTP에서 인증은 다음과 같습니다.
 
 - [기본인증, 다이제스트 인증](https://ideveloper2.dev/blog/2019-11-23--%EA%B8%B0%EB%B3%B8-%EC%9D%B8%EC%A6%9D-%EB%8B%A4%EC%9D%B4%EC%A0%9C%EC%8A%A4%ED%8A%B8-%EC%9D%B8%EC%A6%9D/#%EA%B8%B0%EB%B3%B8%EC%9D%B8%EC%A6%9D)
 - [HTTP 인증 및 기본 및 요약 이해](https://johyungen.tistory.com/351)
+
+<br>
+
+[블로그 글 추가](https://medium.com/nemne/http-%EB%88%84%EA%B0%80-%EC%A0%91%EA%B7%BC-%ED%96%88%EB%8A%94%EC%A7%80-%ED%99%95%EC%9D%B8%ED%95%98%EB%8A%94-http-%EC%9D%B8%EC%A6%9D-e9bbf9ccc7df))
