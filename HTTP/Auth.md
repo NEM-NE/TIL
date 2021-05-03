@@ -142,4 +142,4 @@ HTTP에서 인증은 다음과 같습니다.
 
 <br>
 
-[블로그 글 추가](https://medium.com/nemne/http-%EB%88%84%EA%B0%80-%EC%A0%91%EA%B7%BC-%ED%96%88%EB%8A%94%EC%A7%80-%ED%99%95%EC%9D%B8%ED%95%98%EB%8A%94-http-%EC%9D%B8%EC%A6%9D-e9bbf9ccc7df))
+[블로그 글 추가](https://medium.com/nemne/http-%EB%88%84%EA%B0%80-%EC%A0%91%EA%B7%BC-%ED%96%88%EB%8A%94%EC%A7%80-%ED%99%95%EC%9D%B8%ED%95%98%EB%8A%94-http-%EC%9D%B8%EC%A6%9D-e9bbf9ccc7df)
