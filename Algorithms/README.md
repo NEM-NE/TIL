@@ -13,3 +13,4 @@
 | `3` | [GCD](./GCD.md) | 유클리드 호제법에 관한 알고리즘을 기록했습니다. |
 | `4` | [LIS](./LIS.md) | LIS에 관한 알고리즘을 기록했습니다. |
 | `5` | [eratosthenes](./eratosthenes.md) | eratosthenes에 관한 알고리즘을 기록했습니다. |
+| `6` | [DFS/BFS](./DFSBFS.md) | DFS/BFS에 관한 알고리즘을 기록했습니다. |
