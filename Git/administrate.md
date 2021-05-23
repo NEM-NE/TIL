@@ -64,5 +64,5 @@ git 생성하기 : `git init`
 | 4 | `git checkout 해쉬코드` | 지정한 버전으로 이동 |
 
 
-
+[블로그](https://medium.com/nemne/git%EC%9C%BC%EB%A1%9C-%EB%B2%84%EC%A0%84-%EA%B4%80%EB%A6%AC%ED%95%98%EA%B8%B0-ddf0538e552c)
 
