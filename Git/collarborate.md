@@ -70,7 +70,7 @@ git branch 생성하기 : `git branch`
 ![추가 설명](./img/reset.png)
 
 
-
+[블로그 게시](https://dlatqdlatq.medium.com/git%EC%9C%BC%EB%A1%9C-%ED%98%91%EC%97%85%ED%95%98%EA%B8%B0-b673e8d94034)
 
 
 
