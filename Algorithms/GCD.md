@@ -70,7 +70,7 @@ k = 2log2(n/z)
 <br>
 
 참조
-1. [위키백과 유클리드 호제법](https://ko.wikipedia.org/wiki/%EC%9C%A0%ED%81%B4%EB%A6%AC%EB%93%9C_%ED%98%B8%EC%A0%9C%EB%B2%95))
+1. [위키백과 유클리드 호제법](https://ko.wikipedia.org/wiki/%EC%9C%A0%ED%81%B4%EB%A6%AC%EB%93%9C_%ED%98%B8%EC%A0%9C%EB%B2%95)
 2. [프로그래밍 학습 블로그, 알고리즘 - 최대공약수 구하기 ](https://ko.wikipedia.org/wiki/%EC%9C%A0%ED%81%B4%EB%A6%AC%EB%93%9C_%ED%98%B8%EC%A0%9C%EB%B2%95)
 3. [유클리드-호제법-최대공약수-구하기weekly ps](https://www.weeklyps.com/entry/)
 4. [onsil블로그](https://onsil-thegreenhouse.github.io/programming/algorithm/2018/04/01/gcd/)

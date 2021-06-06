@@ -52,12 +52,13 @@ import java.util.*;
 public class Test {
 	// 2 : 01
 
+	static int[] temp;
+
 	static void sort(int[] ary, int start, int mid, int end) {
 		int left = start;
 		int right = mid+1;
         // 인덱스 값을 start로 함. 가장 최솟값이 start이기 때문이다.
 		int index = start;
-		int[] temp = new int[ary.length];
 		
 		while(left <= mid && right <= end) {
 			if(ary[left] > ary[right]) {
@@ -84,6 +85,7 @@ public class Test {
 	
 	public static void main(String[] args) throws IOException {
 		int[] ary = {4, 77, 12, 34, 1, 67, 4, 20, 3, 2, 7, 5, 10};
+		temp = new int[ary.length];
 		
 		mergeSort(ary, 0, ary.length-1);
 		

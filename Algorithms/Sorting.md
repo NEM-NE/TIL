@@ -15,9 +15,9 @@ Sorting...!
 <br>
 
     당연한 말이겠지만 정렬이 필요할 때 사용!
-    정렬을 하여 실보다 득이 많을 때 사용한다. (복합 문제를 안풀어봐서 ㅎ...)
+	정렬을 하여 문제를 쉽게 접근할 수 있다면 사용해야한다.
     
-> 다만 정렬 알고리즘은 시간복잡도가 서로 다르기 때문에 유의하여 사용해야한다.
+> 다만 정렬 알고리즘은 시간복잡도가 상황에 따라 서로 다르기 때문에 유의하여 사용해야한다.
 
 <br>
 
@@ -261,9 +261,39 @@ public class CountingSort {
 <br>
 
 ## **Arrays.sort**와 **Collections.sort**
+<br>
+
     실질적으로 정렬 문제에서 가장 많이 이용됨.
     compare 메서드로 논리적으로 구현 할 수 있음.
-    Arrays.sort는 Dual-pivot qucik sort알고리즘을 사용하고 Collections.sort는 Tim sort알고리즘을 사용.
+    Arrays.sort는 Dual-pivot qucik sort알고리즘을 사용하고 Collections.sort는 Tim sort(Merge sort)알고리즘을 사용.
+
+<br>
+
+```java
+	public static void main(String[] args) {
+		Integer[] ary = {1, 4, 6, 2, 7, 5, 9, 8};
+		ArrayList<Integer> list = new ArrayList<Integer>();
+		
+		Arrays.sort(ary, new Comparator<Integer>() {//배열도 int가 아닌 Integer여야 된다.
+
+			@Override
+			public int compare(Integer o1, Integer o2) {
+				return o1 - o2;
+			}
+			
+		});
+
+		Collections.sort(list, new Comparator<Integer>() {
+			public int compare(Integer o1, Integer o2) {
+				return o1 - o2;
+			}
+		});
+		
+	}
+```
+
+<br>
+
 ##### Tip : return e1 - e2는 오름차순 e2 - e1는 내림차순
 <br>
 
