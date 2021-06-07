@@ -8,6 +8,7 @@ BinarySearch...!
 
 <br>
 
+
 ## 2. 언제 사용해야되나?
 <br>
 
