@@ -19,6 +19,16 @@ Euclidean algorthims..!
     x, y의 최대 공약수는 y, r의 최대 공약수와 같다.
     r이 0이 될 때까지 반복하면 그 때 `y가 x, y의 최대 공약수이다.
 
+### 이해하기 쉬운 증명
+
+<Br>
+
+![사이즈](https://lh3.googleusercontent.com/pw/ACtC-3cVc-M8kNP4u5wvNilsNzdLbG6gltJviX3jeAm9RUHc6njlqLntO7VzX4hUnGtqsdOpePbE4yhiKjWhyrv5rSh1sWnF5b_YrnNDceSxsYjFYQXFhxbjYkxc8uj8_csTS3LtsMeXXbst6VC2M9d0mmpY=w487-h338-no?authuser=0)
+
+<Br>
+
+> 22를 8로 나눴을 때 나머지 부분은 6을 다시 6으로 나누고
+거기서의 나머지 부분 A을 다시 A로 나누고를 나머지가 0이 될 때까지 반복한다.   
 
 <Br>
 

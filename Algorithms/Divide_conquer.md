@@ -2,6 +2,11 @@ Divide and Conquer Algorithm...!
 =======================
 
 ## 1. 분할정복 알고리즘 이란?
+
+<br>
+
+![사이즈](https://www.cdn.geeksforgeeks.org/wp-content/uploads/Merge-Sort-Tutorial.png)
+
 <br>
 
 > 한번에 풀기 어려운 문제를 "분할"하여 "정복"하고 결합하는 알고리즘
@@ -12,8 +17,8 @@ Divide and Conquer Algorithm...!
 ## 2. 언제 사용해야되나?
 <br>
 
-    1. 큰 문제를 작은 문제로 나눌 수 있을 때(여기서 나온 작은 문제는 독립적이다.)
-    2. 
+    1. 큰 문제를 자연스럽게 작은 문제로 나눌 수 있을 때(여기서 나온 작은 문제는 독립적이다.)
+    2. 작은 문제들로 큰 문제를 효율적을 풀 수 있을 때
     
 > 분할 정복 문제 같은 경우 실제로 문제 풀이에서는 잘 안쓰이고 병합정렬, 이분탐색등의 알고리즘에서 응용되어 사용한다.
 
@@ -22,7 +27,7 @@ Divide and Conquer Algorithm...!
 ## 3. 사용 방법
 <br>
 
-> 분할정복 알고리즘은 재귀와 성질이 비슷하여 재귀가 자주 등장한다. 
+> 분할정복 알고리즘은 재귀 패러다임과 비슷하여 재귀가 자주 등장한다. 
 
 <br>
 
@@ -35,7 +40,16 @@ Divide and Conquer Algorithm...!
 ## 4. 효율성
 <br>
 
-    O(n * log n)
+![사이즈](./img/divideSize.png)
+
+가로 log n개 세로 n개로 O(n * log n)이다.
+
+<br>
+
+어렵고 큰 문제를 작은 문제로 분할하여 풀기 때문에 시간적 비용이 절감된다.
+
+
+    시간 복잡도 : O(n * log n)
 
 <br>
 
@@ -102,6 +116,7 @@ public class Test {
 <br>
 
     동적계획법과 다른 이유 : 작은 문제들의 정답이 항상 같다.
+	재귀와 다른 이유 : 재귀는 한 조각과 전체로 나누는 대신에 분할 정복은 절반으로 나눈다.
 
 <br>
 
@@ -109,6 +124,3 @@ public class Test {
 <br>
 
 <br>
-
-참조
-1. 전반적인 부분을 다룸 : [Link](https://galid1.tistory.com/507)
