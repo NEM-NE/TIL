@@ -36,7 +36,7 @@
 
 - [블로그 | IT 개발자를 위한 글쓰기 가이드](https://www.ciokorea.com/insider/38600)
     - 글쓰기는 목적, 독자, 목적과 독자에 맞는 디테일을 고려해서 작성해야한다. 서론, 본론, 결론에 의거하여 작성하되 임팩트 있는 문장을 사용한다. 그리고 검토를 반드시 해라.
-
+- [좋은 기술 블로그를 만들어 나가기 위한 8가지 제언](https://www.44bits.io/ko/post/8-suggestions-for-tech-programming-blog)
 
 <br>
 
