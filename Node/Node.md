@@ -5,7 +5,7 @@
 
 <br>
 
-    Node.js는 Chrome V8 Javascript 엔진으로 빌드된 Javascript 런타임입니다.sssss
+    Node.js는 Chrome V8 Javascript 엔진으로 빌드된 Javascript 런타임입니다.
 
 <Br>
 
