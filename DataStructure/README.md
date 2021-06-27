@@ -14,5 +14,6 @@
 | `4` | [Set](./Set.md) | Set이 무엇인지에 대해 기록을 했습니다.  |
 | `5` | [Map](./Map.md) | Map이 무엇인지에 대해 기록을 했습니다.  |
 | `6` | [Heap](./Heap.md) | Heap이 무엇인지에 대해 기록을 했습니다.  |
+| `7` | [Priority Queue](./PriorityQueue.md) | Priority Queue이 무엇인지에 대해 기록을 했습니다.  |
 
 
