@@ -1,174 +1,173 @@
-Stack
-=====
+Queue
+===
 
-<br>
+## Queue란?
 
-## Stack이란?
-------
+>큐는 열(column)이다.
 
-![스택](./img/stack.webp)
+<strong>Queue는 Stack과 더불어 LIFI(Last-In First-Out)의 형식을 가진 자료구조이다.</strong>
 
-    Stack은 LIFO(Last In - First Out)구조를 가지며 Stack(쌓다)라는 기능을 가진 자료구조입니다.
-    하단이 막힌 구조로 위에서 들어오거나 뺄 수 있습니다.
+큐의 대표적인 예시로는 대기'열'이 있다. 
 
-#### 이용사례 : 인터넷 방문기록, undo, 메모리 구조 stack area, ..
+Queue는 인터페이스로 LinkedList를 통해 자바에서는 구현되지만 Array를 사용하여 구현할 수도 있다.
 
-<br>
+## 왜 Queue을 사용해야하나?
 
-## Stack의 주요 메서드
+Queue는 대표적인 자료구조로 <strong>먼저 인풋을 입력 받은 데이터</strong>가 먼저 출력되도록 할 때 사용된다.
 
-<br>
+## Queue의 동작원리
 
-- Stack.push(E e) : 매개변수 e를 스택에 넣는다.
+ArrayQueue의 경우 한정적인 길이 때문에 Circular Array로 동작한다.
 
-- Stack.pop() : 스택 가장 위에 있는 요소를 뺀다.
+![Array Queue 동작](./img/ArrayQueue.png)
 
-- Stack.peek() : 스택 가장 위에 있는 요소를 확인한다.
+1. 입력 받은 마지막 데이터 인덱스를 rear이라 하고 가장 앞에 있는 데이터 보다 더 앞에 있는 데이터를 front라고 한다.
+2. 만약 배열의 사이즈가 넘어가게 될 경우 나머지 연산자를 사용하여 맨 앞으로 오게한다.
 
-- Stack.size() : 스택안에 있는 요소의 수를 알려준다.
+LinkedList Queue의 경우 ArrayQueue와 비슷하게 head와 tail를 만들어 관리한다.
 
-- Stack.isEmpty() : 스택이 비어있는지 확인한다.
+![해시 동작](./img/LinkedListQueue.png)
 
-- Stack.search(E e) : 해당 위치를 반환한다.
+## Queue의 주요 기능
 
-<br>
+Queue의 기본 기능은 다음과 같다.
 
-### 추가
+![해시 동작](./img/queuemethod.png)
 
-<br>
-
->자바 스택에서는 데이터 삽입 메서드가 push, add 2개가 있다. 같은 기능을 하지만
-약간의 차이점이 존재한다. push는 리턴값이 객체이고 add는 boolean이다. 그리고  add는 예외처리가 되어있다. 뿐만 아니라 스택을 사용한다면 push를 사용함으로써 암묵적으로 알려줄 수 있다. 왜냐하면 add는 list interface에 의해 구현된 메서드이기 때문이다.
-
-<br>
-
-## Stack 구현
-
-<br>
+## Queue 구현(ArrayQueue)
 
 ```java
 
-import java.util.Arrays;
 import java.util.EmptyStackException;
+import java.util.NoSuchElementException;
 
-import Interface.StackInteface;
+import Interface.Queue;
 
-public class Stack<E> implements StackInteface<E>{
-	private static final int DEFAULT_CAPACITY = 10;	// 최소(기본) 용적 크기 
-	private static final Object[] EMPTY_ARRAY = {};	// 빈 배열 
+public class ArrayQueue<E> implements Queue<E> {
 
-	private Object[] array;	// 요소를 담을 배열  
+	private static final int DEFAULT_CAPACITY = 64;	// 최소(기본) 용적 크기 
+	
+	private Object[] array;	// 요소를 담을 배열 
 	private int size;	// 요소 개수 
 	
+	private int front;	// 시작 인덱스를 가리키는 변수(빈 공간임을 유의)
+	private int rear;	// 마지막 요소의 인덱스를 가리키는 변수 
 	
-	// 생성자1 (초기 공간 할당 X) 
-	public Stack() {
-		this.array = EMPTY_ARRAY;
+	
+	// 생성자1 (초기 용적 할당을 안할 경우)  
+	public ArrayQueue() {
+		this.array = new Object[DEFAULT_CAPACITY];
 		this.size = 0;
+		this.front = 0;
+		this.rear = 0;
 	}
 	
-	// 생성자2 (초기 공간 할당 O) 
-	public Stack(int capacity) {
+	// 생성자2 (초기 용적 할당을 할 경우) 
+	public ArrayQueue(int capacity) {
 		this.array = new Object[capacity];
 		this.size = 0;
+		this.front = 0;
+		this.rear = 0;
 	}
 	
-	private void resize() {
-		if(this.size == this.array.length) {	// expand array.lengt * 2
-			Object[] newArray = new Object[this.array.length * 2];
-			System.arraycopy(array, 0, newArray, 0, array.length);
-			this.array = newArray;
+	private void resize(int newCapacity) {
+		int arrayCapacity = array.length;
+		Object[] newArray = new Object[newCapacity];
+		
+		for(int i = 1, j = front + 1; i <= size; i++, j++ ) {
+			newArray[i] = array[j % arrayCapacity];
 		}
 		
-		if(this.size < this.array.length / 2) {
-			Object[] newArray = new Object[this.array.length / 2];
-			System.arraycopy(array, 0, newArray, 0, array.length);
-			this.array = newArray;
-		}
+		this.array = null;
+		this.array = newArray;
 		
-		if(Arrays.equals(array, EMPTY_ARRAY)) {
-			array = new Object[DEFAULT_CAPACITY];
-			return;
-		}
+		front = 0;
+		rear = size;
 	}
 	
 	@Override
-	public E push(E item) {
-		if(this.size == this.array.length) resize();
-		array[size] = item;
+	public boolean offer(E e) {
+		// 용적이 가득 찼을 경우 
+		if((rear + 1) % array.length == front) {
+			resize(array.length * 2);	// 용적을 두 배 늘려준다. 
+		}
 		
+		rear = (rear + 1) % array.length;
+		array[rear] = e;
 		size++;
 		
-		return item;
+		return true;
 	}
 
 	@SuppressWarnings("unchecked")
 	@Override
-	public E pop() {
-		if(this.size == 0) {
-			throw new EmptyStackException();
+	public E poll() {
+		if(size == 0) {
+			return null;
 		}
 		
-		E item = (E) array[size-1];
-		array[size-1] = null;
+		front = (front + 1) % array.length;
+		E item = (E) array[front];
 		
 		size--;
-		resize();
+		
+		// 용적이 최소 크기(64)보다 크고 요소 개수가 1/4 미만일 경우
+		if(array.length > DEFAULT_CAPACITY && size < (array.length / 4)) {
+				
+			// 아무리 작아도 최소용적 미만으로 줄이지는 않도록 한다. 
+			resize(Math.max(DEFAULT_CAPACITY, array.length / 2));
+		}
 		
 		return item;
 	}
+	
+	public E remove() {
+		E e = poll();
+		
+		if(e == null) {
+			throw new NoSuchElementException();
+		}
+		
+		return e;
+	}
 
+	@SuppressWarnings("unchecked")
 	@Override
 	public E peek() {
-		if(this.size == 0) {
+		if(size == 0) {
+			return null;
+		}
+		
+		front = (front + 1) % array.length;
+		return (E) array[front];
+	}
+	
+	public E element() {
+		E e = peek();
+		
+		if(e == null) {
 			throw new EmptyStackException();
 		}
 		
-		return (E) array[size-1];
+		return e;
 	}
-
-	@Override
-	public int search(Object value) {
-		int search = 0;
+	
+	public boolean contains(Object value) {
+		int start = front + 1;
+		int end = rear;
 		
-		for(int i = size; i > 0; i--) {
-			search++;
-			if(array[i-1] == value) {
-				return search;
-			}
+		while(start == end) {
+			start = start % array.length;
+			
+			if(array[start].equals(value)) return true;
+			
+			start++;
 		}
-		return -1;
+		
+		return false;
 	}
 
-	@Override
-	public int size() {
-		return size;
-	}
-
-	@Override
-	public void clear() {
-		// 저장되어있던 모든 요소를 null 처리 해준다.
-		for(int i = 0; i < size; i++) {
-			array[i] = null;
-		}
-		size = 0;
-		resize();
-	}
-
-	@Override
-	public boolean empty() {
-		return (size == 0);
-	}
 }
 
 ```
 
-<br>
-
-## 기타
-
-<br>
-
-- 자바컬렉션프레임워크에 따르면 자바에서 스택은 백터클래스를 부모로 하여 구현되었다. 즉 스택은 Object배열로 요소를 관리하고 있다.
-
-- 스택을 특정 사이즈가 넘치게 되면 StackOverflow라는 에러가 발생하기 때문에 사전에 에러가 안나게 막아줘야한다.
