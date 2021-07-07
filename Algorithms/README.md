@@ -18,3 +18,4 @@
 | `8` | [MergeSort](./MergeSort.md) | MergeSort에 관한 알고리즘을 기록했습니다. |
 | `9` | [Divide conquer](./Divide_conquer.md) | 분할정복에 관한 알고리즘을 기록했습니다. |
 | `10` | [Greedy](./Greedy.md) | 그리디에 관한 알고리즘을 기록했습니다. |
+| `11` | [BruteForce](./BruteForce.md) | 완전탐색에 관한 알고리즘을 기록했습니다. |
