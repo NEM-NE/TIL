@@ -45,6 +45,9 @@ Brute Force Algorithm...!
 <br>
 
 ## 7. 참고
+
 <br>
+
+brute force는 단순히 for문이나 if문을 이용하여 모든 경우의 수를 탐색할 수 있지만 순열, DFS/BFS, 비트마스크, 재귀패러다임 등을 이용 한 것도 모두 `완전탐색`이라고 할 수 있다.
 
 <br>

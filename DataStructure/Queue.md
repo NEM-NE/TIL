@@ -7,7 +7,7 @@ Queue
 
 <strong>Queue는 Stack과 더불어 LIFI(Last-In First-Out)의 형식을 가진 자료구조이다.</strong>
 
-큐의 대표적인 예시로는 대기'열'이 있다. 
+큐의 대표적인 예시로는 대기`열`이 있다. 
 
 Queue는 인터페이스로 LinkedList를 통해 자바에서는 구현되지만 Array를 사용하여 구현할 수도 있다.
 
