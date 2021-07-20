@@ -87,7 +87,7 @@ Entry 클래스 hash, key, value, 다음 Node 값을 가지고 있다.
 
 Map의 기본 기능은 다음과 같다.
 
-![맵 기본 메서드](./img/map.png)
+![맵 기본 메서드](./img/Map.png)
 
 CRUD 기능인 put(), remove(), get() 이외에도
 
