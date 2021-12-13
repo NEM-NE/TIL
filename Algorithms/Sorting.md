@@ -28,6 +28,54 @@ Sorting...!
 ## 3. 사용 방법
 <br>
 
+### 버블 정렬
+<br>
+
+![screenshot](https://mblogthumb-phinf.pstatic.net/20140128_282/justant_1390842794487v9kxH_PNG/%B9%F6%BA%ED%C1%A4%B7%C4.png?type=w2)
+> 버블 정렬은 왼/오른쪽 값부터 하나씩 비교하여 값을 변경해준다. 만약 기준보다 크거나 작은 값을 만나면 값을 변경하고 다시 순환한다.<br>
+
+##### Ex) 오름차순 정렬 할 때 5를 기준으로 잡고 5보다 순회 중 큰 값을 찾으면 값을 변경해주고 변경된 값을 기준으로 이어서 순회한다. 순회가 끝나면 다시 처음부터 순회
+
+<br>
+
+``` java
+import java.io.*;
+import java.util.*;
+
+public class BubbleSort {
+	public static void main(String[] args) throws IOException {		
+        int[] ary = {5, 1, 9, 7, 2, 3};
+
+        for (int i = 0; i < ary.length - 1; i++) {
+            for(int j = 0; j < ary.length - 1; j++){
+				if(ary[j] > ary[j+1]){
+                    int temp = ary[j];
+                    ary[j] = ary[j+1];
+                    ary[j+1] = temp;
+                }
+            }
+        }
+
+        for (int i = 0; i < ary.length; i++) {
+            System.out.print(ary[i] + ", ");
+        }
+		
+	}
+}
+
+```
+
+
+<br>
+
+### 특징
+
+1. 최선, 최악, 일반적인 경우 모두 O(n^2)로 동일하다.
+
+<br>
+<br> <br>
+
+
 ### 삽입 정렬
 <br>
 
@@ -44,7 +92,7 @@ import java.util.*;
 
 public class InsertionSort {
 	public static void main(String[] args) throws IOException {		
-        int[] ary = {7, 5, 9, 0, 3, 1, 6, 2, 4, 8};
+        int[] ary = {29, 10, 14, 37, 13};
 
         for (int i = 1; i < ary.length; i++) {
             for(int j = i; j > 0; j--){
@@ -245,7 +293,7 @@ public class CountingSort {
 | `삽입정렬` | O(n^2) |  최선일 경우 O(n) |
 | `퀵정렬` | O(nlogn) |  대부분 사용되는 정렬, 최악의 경우 O(n^2)|
 | `계수정렬` | O(n + k) |  범위가 짧을 때 사용|
-| `팀 정렬` | O(nlogn) |  최선일 경우 O(n), Collections.sort에서 사용|
+| `팀 정렬` | O(nlogn) |  최선일 경우(데이터가 이미 정렬된 경우) O(n), Collections.sort에서 사용|
 | `병합정렬` | O(nlogn) |  항상 시간복잡도가 O(nlogn)로 같음|
 
 <br>
@@ -278,6 +326,8 @@ public class CountingSort {
 
 			@Override
 			public int compare(Integer o1, Integer o2) {
+				// 음수가 나오면 두 원소의 위치를바꾸지 않는다.
+				// 양수면 위치를 바꾼다.
 				return o1 - o2;
 			}
 			
