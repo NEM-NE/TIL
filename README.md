@@ -21,10 +21,11 @@
 | `2` | [Git](./Git/README.md) | 깃과 깃허브 지식을 기록하는 공간입니다. |
 | `3` | [자료구조](./DataStructure/README.md) | 자바컬렉션내의 자료구조를 기록하는 공간입니다. |
 | `4` | [Java](./Java/README.md) | Java 관련 내용을 기록하는 공간입니다. |
-| `5` | [Web](./Web) | Web 관련 내용을 기록하는 공간입니다. |
-| `6` | [Node](./Node) | Node에 대한 기초내용을 기록하는 공간입니다. |
-| `7` | [OS](./OS) | Node에 대한 기초내용을 기록하는 공간입니다. |
+| `5` | [Web](./Web/README.md) | Web 관련 내용을 기록하는 공간입니다. |
+| `6` | [Node](./Node/README.md) | Node에 대한 기초내용을 기록하는 공간입니다. |
+| `7` | [OS](./OS/README.md) | Node에 대한 기초내용을 기록하는 공간입니다. |
 | `8` | [ComputerStructure](./ComputerStructure/README.md) | ComputerStructure에 대한 기초내용을 기록하는 공간입니다. |
+| `8` | [Database](./DB/README.md) | DB에 대한 기초내용을 기록하는 공간입니다. |
 
 <br>
 
