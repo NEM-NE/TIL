@@ -25,7 +25,8 @@
 | `6` | [Node](./Node/README.md) | Node에 대한 기초내용을 기록하는 공간입니다. |
 | `7` | [OS](./OS/README.md) | Node에 대한 기초내용을 기록하는 공간입니다. |
 | `8` | [ComputerStructure](./ComputerStructure/README.md) | ComputerStructure에 대한 기초내용을 기록하는 공간입니다. |
-| `8` | [Database](./DB/README.md) | DB에 대한 기초내용을 기록하는 공간입니다. |
+| `9` | [Database](./DB/README.md) | DB에 대한 기초내용을 기록하는 공간입니다. |
+| `10` | [Programming](./Programming/README.md) | Programming에 대한 기초내용을 기록하는 공간입니다. |
 
 <br>
 
