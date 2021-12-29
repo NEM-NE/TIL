@@ -27,6 +27,7 @@
 | `8` | [ComputerStructure](./ComputerStructure/README.md) | ComputerStructure에 대한 기초내용을 기록하는 공간입니다. |
 | `9` | [Database](./DB/README.md) | DB에 대한 기초내용을 기록하는 공간입니다. |
 | `10` | [Programming](./Programming/README.md) | Programming에 대한 기초내용을 기록하는 공간입니다. |
+| `11` | [JavaScript](./JavaScript/README.md) | JavaScript에 대한 기초내용을 기록하는 공간입니다. |
 
 <br>
 
