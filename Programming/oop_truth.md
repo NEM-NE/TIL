@@ -9,6 +9,7 @@
 4. <b>역할, 책임, 협력</b>
 5. <b>책임과 메세지</b>
 6. <b>객체 지도</b>
+7. <b>함께 모으기</b>
 
 ----
 
@@ -609,3 +610,161 @@
 2. 도메인 모델에 있는 개념을 은유하여 적절한 객체를 만든다.
 3. 필요한 메시지를 식별하면서 객체들에게 책임을 할당한다.
 4. 객체를 구현하기 위해 클래스를 추가하고 속성과 함꼐 메서드를 구현한다.
+
+<br><br>
+
+----
+
+<br><br><br>
+    
+## 함께 모으기
+
+> 클래스는 개념 관점, 명세 관점, 구현 관점을 모두 수용할 수 있도록 개념, 인터페이스, 구현을 함께 드러내야한다.
+
+개념 관점에서의 설계 => 실제 도메인에 있는 개념과 개념 간의 관계를 표현 / 최대한 실제 도메인과 유사하게 반영 할 것
+
+명세 관점에서의 설계 => 객체의 인터페이스에 초점을 맞추며, 객체가 협력을 위해 "무엇"을 할 수 있는가에 초점을 맞춤.
+
+구현 관점에서의 설계 => 객체들의 책임을 수행하는데 필요한 속성, 메서드를 작성, 객체들이 책임을 위해 "어떻게" 수행하는지에 초점을 맞춤.
+
+    명세 관점과 구현 관점의 구분은 매우 중요, 인터페이스와 구현은 반드시 분리해야한다.
+
+<br><br>
+
+### 커피 전문점 도메인
+
+<br>
+
+![실제 주문 흐름](https://img1.daumcdn.net/thumb/R1280x0/?scode=mtistory2&fname=https%3A%2F%2Fblog.kakaocdn.net%2Fdn%2F7jZel%2Fbtq9s98AXFZ%2FQkgRkoFM9BKFlEBaWdz6D1%2Fimg.png)
+
+위 그림은 각 객체들을 타입과 관계를 이용하여 추상화한 도메인 모델이다.
+객체지향 관점에서 커피 전문점이라는 도메인은 메뉴판, 손님, 바리스타, 커피 객체로 이뤄진 작은 세상이다.
+
+객체지향의 올바른 설계를 하기 위해서는 훌륭한 협력을 먼저 설계해야하며 훌륭한 협력을 위해서는 메시지를 먼저 선정해야한다.
+메시지를 선택하면 메시지를 수신할 객체를 선정한다.
+
+    첫번 째 메시지는 "커피를 주문하라"이고 도메인 모델에 따라 수행할만한 객체는 손님 객체이다.
+    따라서 손님은 이제 "커피를 주문하라"라는 메시지에 응답할 책임이 있다.
+
+    이후 두 번째로 "메뉴 항목을 찾아라"는 손님 객체에서 수행하기에 부적합 하므로
+    외부에 요청을 보내야하며 해당 요청을 처리할만한 적절한 객체는 메뉴판 객체이다. 
+    (실제 세계에선 메뉴판은 수동적인 존재이지만 객체지향은 모든 객체가 자율성을 가져야하므로 은유를 통해 의인화 한다.)
+
+    손님은 이제 주문할 메뉴 항목에 대한 정보를 얻었으니 "커피를 제조하라"라는 명령을 요청할 수 있다.
+    해당 명령은 바리스타 객체가 수행하기 적절하다.
+
+
+![실제 주문 흐름](https://img1.daumcdn.net/thumb/R1280x0/?scode=mtistory2&fname=https%3A%2F%2Fblog.kakaocdn.net%2Fdn%2FbVrY2m%2Fbtq9rdDXvAa%2FYpw8uS22Vwmy3VBP3kKTY0%2Fimg.png)
+
+이로써 협력에 필요한 객체의 종류, 책임, 메시지에 대한 대략적인 윤곽이 잡힌다.
+
+<br><br>
+
+### 커피 전문점 도메인 (인터페이스 정리하기)
+
+<br>
+
+![실제 주문 흐름](https://img1.daumcdn.net/thumb/R1280x0/?scode=mtistory2&fname=https%3A%2F%2Ft1.daumcdn.net%2Fcfile%2Ftistory%2F9922524C5D68B92D25)
+
+각 객체들이 처리할 수 있는 메세지들이다.
+
+이를 통해 정적인 타입으로 옮김으로써 구현해야한다.
+
+```java
+
+class Customer {
+    public void order(String menuName) {}
+}
+
+class MenuItem {}
+
+class Menu {
+    public MenuItem findMenu(String menuName) {}
+}
+
+class Barista {
+    public Coffee makeCoffee(MenuItem item) {
+
+    }
+}
+
+class Coffee {
+    public Coffee(MenuItem item) {
+
+    }
+}
+
+```
+
+협력을 통해 외부에서 식별해야하기 때문에 접근자를 public으로 해준다.
+
+<br><br>
+
+### 커피 전문점 도메인 (구현하기)
+
+<br>
+
+주문하는 과정(order 메서드)에서 메뉴판 객체와 바리스타 객체에 접근을 해야한다.
+따라서 order 메서드 매개변수에 각 객체를 추가해준다.
+
+```java
+
+class Customer {
+    public void order(String menuName, MenuItem menuItem, Barista barista) {}
+}
+
+```
+
+=> 구현 도중에 충분히 인터페이스가 변경될 수 있다. (협력 설계에 시간을 너무 쏟지 말고 구현을 통해서 코드를 점진적으로 수정하자)
+
+```java
+
+class Menu {
+    private List<MenuItem> items;   // 구현 도중에 생성됨.
+
+    public Menu(List<MenuItem> items) {
+        this.items = items;
+    }
+
+    public MenuItem findMenu(String menuName) {
+        for(MenuItem each : items) {
+            if(each.getName().equals(menuName)){
+                return each;
+            }
+        }
+
+        return null;
+    }
+}
+
+```
+
+items 역시 구현 도중에 결정되었으며 객체 내부 속성이므로 캡슐화가 되었다.
+
+    실제로 인터페이스를 정리할 때 내부 속성을 고려해서 작성하면 안된다.
+    객체가 어떤 책임을 수행할지 결정한 후에 책임을 수행하는데 필요한 속성을 결정해야한다.
+
+
+![실제 주문 흐름](https://img1.daumcdn.net/thumb/R1280x0/?scode=mtistory2&fname=https%3A%2F%2Fblog.kakaocdn.net%2Fdn%2F7oMGR%2Fbtq9nDXB2Mr%2Fsk1ts4T7pPhKfR3Lk6UTYK%2Fimg.jpg)
+
+설계가 제대로 안된다면 실제로 코드를 작성하면서 협력의 밑그림을 그려보는 것이 좋다. => 테스트 코드 역시 비슷한 원리
+
+<br><br>
+
+### 코드와 세 가지 관점
+
+<br>
+
+> 코드는 개념, 명세, 구현 관점 모두 수용해야한다.
+
+위 코드 역시 도메인 모델에 나와있는 개념을 기반으로 객체를 구성하여 개념 관점에 충족하고
+명세 관점은 클래스의 인터페이스를 바라보며, 위 코드 역시 공용 인터페이스를 먼저 구성했기 때문에 충족한다.
+마지막으로 구현 관점도 내부 구현을 바로보며, 실제로 속성과 메서드를 구현함으로써 충족한다. (캡슐화 주의 깊게 처리할 것.)
+
+> 도메인 개념을 참조하는 이유
+
+소프트웨어는 항상 변한다. 우리는 예측을 할 수 없기 때문에 그에 따른 발 빠른 대응을 해야하는데 변하지 않은 본질을 기준으로 설계를 해두면
+변화에 대응하기 좋다. 또한 코드의 구조와 의미를 쉽게 유추할 수 있게 해준다.
+
+> 인터페이스와 구현은 반드시 분리하라
+
