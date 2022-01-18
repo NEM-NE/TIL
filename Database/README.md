@@ -12,3 +12,4 @@
 | `2` | [Transaction](./transaction.md) | 트랜잭션에 대한 내용이 담긴 글입니다.  |
 | `3` | [Normalization](./normalization.md) | 정규화에 대한 내용이 담긴 글입니다.  |
 | `4` | [MySQL vs PostgreSQL](./mysql-postgresql.md) | mysql과 postgresql에 대한 내용이 담긴 글입니다.  |
+| `5` | [Index](./index.md) | index에 대한 내용이 담긴 글입니다.  |
