@@ -1,4 +1,4 @@
-RDBMS와 NoSQL
+Transaction
 ===
 
 ## 목차
@@ -129,7 +129,7 @@ x와 y는 독립적인 값이기 때문에 연산의 순서가 바뀌어도 상�
 
     트랜잭션이 값을 변경하는 도중 다른 트랜잭션이 값을 읽었을 경우
 
-![이미지](https://static.javatpoint.com/dbms/images/dbms-concurrency-control2.png)
+![이미지](https://www.gatevidyalay.com/wp-content/uploads/2018/05/Dirty-Read-Problem-Concurrency-Problems-in-DBMS.png)
 
 <br>
 
@@ -137,7 +137,7 @@ x와 y는 독립적인 값이기 때문에 연산의 순서가 바뀌어도 상�
 
     한 트랜잭션에서 값을 2번 읽었을 때 읽은 값들이 서로 다른 경우
 
-![이미지](https://media.geeksforgeeks.org/wp-content/uploads/20190823132927/d51.jpg)
+![이미지](https://www.gatevidyalay.com/wp-content/uploads/2018/05/Unrepeatable-Read-Problem-Concurrency-Problems-in-DBMS.png)
 
 <br>
 
