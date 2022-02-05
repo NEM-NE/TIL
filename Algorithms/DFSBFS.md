@@ -1,10 +1,10 @@
-DFS & BFS
-=======================
+# DFS & BFS
 
 ## 1. DFS(깊이 우선 탐색) & BFS(너비 우선 탐색)이란?
+
 <br>
 
->  DFS & BFS는 그래프에서 '탐색'을 위해 사용하는 탐색 알고리즘입니다. <br>
+> DFS & BFS는 그래프에서 '탐색'을 위해 사용하는 탐색 알고리즘입니다. <br>
 > 따라서 해당 알고리즘에 대해 알기 전에 비선형 자료구조인 그래프에 대해 이해를 먼저해야합니다.
 
 <br>
@@ -37,15 +37,17 @@ BFS는 너비 우선 탐색 알고리즘입니다. DFS와는 다르게 연결된
 <br>
 
 ## 2. 언제 사용해야되나?
+
 <br>
 
-    DFS & BFS 알고리즘은 그래프 탐색 알고리즘입니다. 따라서 해당 알고리즘 문제에 그래프 관련 문제여야되고 정점들을 확인해야 할 때 사용됩니다. 
-    
+    DFS & BFS 알고리즘은 그래프 탐색 알고리즘입니다. 따라서 해당 알고리즘 문제에 그래프 관련 문제여야되고 정점들을 확인해야 할 때 사용됩니다.
+
 두 알고리즘에 차이점은 모든 정점을 탐색을 하는가? 최단 경로를 빠리게 구할 수 있는가? 경로의 특징을 저장해하는가? 등으로 나눌 수 있습니다. DFS는 모든 정점을 탐색, 경로의 특징을 저장할 때 사용하고 BFS는 최단 경로를 구할 때 사용합니다.
 
 <Br>
 
 ## 3. 사용 방법
+
 <br>
 
 ### DFS
@@ -63,6 +65,7 @@ BFS는 너비 우선 탐색 알고리즘입니다. DFS와는 다르게 연결된
 <br>
 
 ## 4. 효율성
+
 <br>
 
     DFS, BFS 모두 간선의 수와 정점의 수로 결정 된다. O(V + E)로 동일합니다.
@@ -70,11 +73,12 @@ BFS는 너비 우선 탐색 알고리즘입니다. DFS와는 다르게 연결된
 <br>
 
 ## 5. 예시
+
 <br>
 
 ### DFS
 
-``` java
+```java
 
 import java.util.ArrayList;
 import java.util.Scanner;
@@ -123,13 +127,44 @@ public class DFS {
 
 ```
 
+직선 DFS
+
+```java
+
+class Solution {
+    public int answer = 0;
+    public boolean[] visit;
+
+    public int solution(int k, int[][] dungeons) {
+        visit = new boolean[dungeons.length];
+
+        dfs(0, k, dungeons);
+
+        return answer;
+    }
+
+    public void dfs(int depth, int k, int[][] dungeons) {
+        for (int i = 0; i < dungeons.length; i++) {
+            if (!visit[i] && dungeons[i][0] <= k) {
+                visit[i] = true;
+                dfs(depth + 1, k - dungeons[i][1], dungeons);
+                visit[i] = false;   // 방문하고 함수 호출 후 되돌린다.
+            }
+        }
+
+        answer = Math.max(answer, depth);
+    }
+}
+
+```
+
 <br>
 
 ### BFS
 
 <br>
 
-``` java
+```java
 
 import java.util.ArrayList;
 import java.util.LinkedList;
@@ -189,6 +224,7 @@ public class BFS {
 ```
 
 ## 6. 기타
+
 <br>
 
     자주 출제되는 알고리즘이지만 다양한 유형이 존재한다. 반드시 숙지하고 어떻게 응용되는지 확인 하면 좋습니다!
@@ -196,6 +232,7 @@ public class BFS {
 <br>
 
 ## 7. 참고
+
 <br>
 
 1. [ries 블로그](https://blog.naver.com/kks227/220785747864)
