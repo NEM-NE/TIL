@@ -47,9 +47,50 @@
 
 ## DDL 쿼리
 
+#### CRUD
+
+```sql
+    CREATE TABLE 테이블 (
+        컬럼이름1 데이터타입1 PRIKARY KEY,
+        컬럼이름2 데이터타입2 NOT NULL,
+        컬럼이름3 데이터타입3,
+        컬럼이름4 데이터타입4 REFERENCES 테이블명(참조된 컬럼),
+        ..
+    )
+
+    DROP TABLE 테이블
+    DROP TABLE IF EXISTS 테이블
+```
+
+#### 테이블 복사하기
+
 ```sql
     CREATE TABLE 테이블 AS ( SELECT 서브 쿼리) => 테이블 복사
-    DROP TABLE 테이블
+```
+
+#### 테이블 설정하기
+
+```sql
+    ALTER TABLE 테이블이름
+    ADD COLUMN 컬럼이름 데이터 타입 제약조건
+
+    ALTER TABLE 테이블이름
+    DROP COLUMN 컬럼이름 CASCADE
+
+    ALTER TABLE 테이블이름
+    RENAME 기존컬럼이름 to 새컬럼이름
+
+    ALTER TABLE 테이블이름
+    ALTER COLUMN 컬럼이름 DROP NOT NULL;
+
+    ALTER TABLE 테이블이름
+    ADD PRIMARY KEY 컬럼이름
+
+    ALTER TABLE 테이블이름
+    ADD FOREIGN KEY 컬럼이름 REFERENCES 부모테이블 컬럼이름2;
+
+    ALTER TABLE 테이블이름
+    ADD COLUMN 컬럼이름 TYPE 새로운 데이터 타입
 ```
 
 ## DCL 쿼리
@@ -111,6 +152,8 @@ INTERSECT ALL => 그냥 합치기
     SELECT ANIMAL_ID FROM ANIMAL_INS
     INTERSECT (ALL)
     SELECT ANIMAL_ID FROM ANIMAL_INS2
+
+    SELECT
 ```
 
 #### 여러개의 테이블의 차집합만 보여주는 EXCEPT, EXCEPT ALL
@@ -193,6 +236,11 @@ SELECT DATE_FORMAT('20200405','%Y/%m/%d')
 https://ponyozzang.tistory.com/656
 
 ```
+
+### 변수 선언
+
+DECLARE variable_name (varchar, numeric, ..)
+variable_name := 'Hello, World!'
 
 ## 기타 팁
 
