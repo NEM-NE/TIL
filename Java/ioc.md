@@ -39,6 +39,53 @@ Dependency LookUp => 개발자가 직접 컨테이너에서 제공하는 API를 
 
 Dependency Injection => 각 class 사이의 의존관계를 빈 설정 정보를 바탕으로 Container가 자동적으로 연결해 주는 것을 뜻함. (빈 설정 파일에 작성해주기만 하면 된다.)
 
+### DI 방법
+
+생성자 주입
+
+```java
+
+@Service
+public class BookService {
+
+    BookRepository bookRepository;
+
+    public BookService(BookRepository bookRepository) {
+        this.bookRepository = bookRepository;
+    }
+}
+
+```
+
+set 메서드 주입
+
+```java
+
+@Service
+public class BookService {
+
+    BookRepository bookRepository;
+
+    public void setBookRepository(BookRepository bookRepository) {
+        this.bookRepository = bookRepository;
+    }
+}
+
+```
+
+Autowired 주입
+
+```java
+
+@Service
+public class BookService {
+
+    @Autowired
+    BookRepository bookRepository;
+}
+
+```
+
 ### Configuration Metadata 설정하기
 
 Configuration Metadata
@@ -63,6 +110,21 @@ Configuration Metadata
        <constructor-arg ref="clubStore" />
    </bean>
 </beans>
+
+```
+
+자바 베이스 코드
+
+```java
+
+@Configuration
+public class AppConfig {
+
+    @Bean
+    public MyService myService() {
+        return new MyServiceImpl();
+    }
+}
 
 ```
 
@@ -122,7 +184,7 @@ Application Context
 
     애플리케이션 컨텍스트는 별도의 설정 정보(Configuration Metadata)를 참고하고 IoC를 적용하여 빈의 생성, 관계설정 등의 제어 작업을 총괄한다.
     빈 팩토리를 확장한 IoC 컨테이너로 빈을 등록하고 관리하는 기본적인 기능은 빈 팩토리와 동일함
-    I18N, 리소스 로딩, 이벤트 발생 및 통지
+    I18N, 리소스 로딩, 이벤트 발생 및 통지 / Spring의 AOP적 특성의 쉬운 통합, Message 자원의 핸들링, 이벤트 발생, WebApplicationContext와 같은 Application 계층의 특정 문맥
     컨테이너 생성 시 모든 빈 정보를 메모리에 로딩함
     싱글톤 레지스트로서의 어플리케이션 컨텍스트임
 
@@ -169,6 +231,15 @@ public class BookService {
 
 ### Bean 생명주기
 
-![ㄴㄴ](https://media.geeksforgeeks.org/wp-content/uploads/20200428011831/Bean-Life-Cycle-Process-flow3.png)
+![ㄴㄴ](https://img1.daumcdn.net/thumb/R1280x0/?scode=mtistory2&fname=https%3A%2F%2Fblog.kakaocdn.net%2Fdn%2FdmnhXN%2FbtqX32t3MjC%2FqPbnLLuhie6k90Ka1zo72K%2Fimg.jpg)
 
 빈생성 -> 의존성 주입 -> 사용자 지정 초기 메서드 호출 -> Bean 사용 가능상태 / 컨테이너 종료 -> 사용자 지정 소멸 메서드 호출
+
+다양한 방법으로 Bean 설정 파일을 읽고 인스턴스를 생성한다.
+이후 설정 파일을 읽어서 해당 되는 Bean 객체에 의존성을 주입하고 Aware 시리즈 인터페이스를 구현한 경우 해당 메서드를 호출
+
+객체를 생성하는 생명 주기 콜백 메서드는 @PostConstruct, InitializingBean 인터페이스, init-method 속성 순으로 호출된다.
+
+이렇게 등록된 Bean 객체는 필요한 곳에서 사용되다가 컨테이너가 종료되면 객체가 소멸할 때는 비슷하게 @PreDestroy, DisposableBean 인터페이스, destroy-method 속성 순으로 호출된다. ㅇ
+
+[참고](https://haruhiism.tistory ㅇ.com/186)
