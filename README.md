@@ -28,6 +28,7 @@
 | `9` | [Database](./Database/README.md) | DB에 대한 기초내용을 기록하는 공간입니다. |
 | `10` | [Programming](./Programming/README.md) | Programming에 대한 기초내용을 기록하는 공간입니다. |
 | `11` | [JavaScript](./JavaScript/README.md) | JavaScript에 대한 기초내용을 기록하는 공간입니다. |
+| `11` | [ML](./ML/README.md) | Machine Learning 대한 내용을 기록하는 공간입니다. |
 
 <br>
 
