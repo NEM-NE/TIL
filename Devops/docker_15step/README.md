@@ -13,4 +13,5 @@
 | `3`  | [3주차](./week3.md) | |
 | `4`  | [4주차](./week4.md) | |
 | `5`  | [5주차](./week5.md) | |
-| `5`  | [6주차](./week6.md) | |
+| `6`  | [6주차](./week6.md) | |
+| `7`  | [7주차](https://dynamic-currant-6c5.notion.site/7-7918f10507174e17bd9c281e4a7eac54) | |
