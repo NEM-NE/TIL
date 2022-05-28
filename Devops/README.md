@@ -11,4 +11,5 @@
 | `1`  | [15단계로 배는 도커 쿠버네티스 정리](./docker_15step/README.md) | 15단계로 배는 도커 쿠버네티스 정리를 읽고 정리했습니다. |
 | `2`  |                     [IAM](./iam.md)                      |              AWS IAM 기능을 정리했습니다.               |
 | `3`  |                     [S3](./s3.md)                      |              AWS S3 기능을 정리했습니다.               |
-| `4`  |                     [S3](./ec2.md)                      |              AWS S3 기능을 정리했습니다.               |
+| `4`  |                     [ec2](./ec2.md)                      |              AWS EC2 기능을 정리했습니다.               |
+| `5`  |                     [how to make docker by using linux](https://dynamic-currant-6c5.notion.site/774379954b6b453daf762b153552e2b5)                      |             도커는 어떻게 리눅스를 통해 만들어졌는지에 대해 정리했습니다.           |
