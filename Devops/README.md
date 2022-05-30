@@ -13,3 +13,4 @@
 | `3`  |                     [S3](./s3.md)                      |              AWS S3 기능을 정리했습니다.               |
 | `4`  |                     [ec2](./ec2.md)                      |              AWS EC2 기능을 정리했습니다.               |
 | `5`  |                     [how to make docker by using linux](https://dynamic-currant-6c5.notion.site/774379954b6b453daf762b153552e2b5)                      |             도커는 어떻게 리눅스를 통해 만들어졌는지에 대해 정리했습니다.           |
+| `6`  |                     [how to use helm](https://dynamic-currant-6c5.notion.site/Helm-ef29181d18f14d7d999ce45fcf85769e)                      |             helm에 대해 정리했습니다.           |
