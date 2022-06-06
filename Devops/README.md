@@ -14,3 +14,4 @@
 | `4`  |                     [ec2](./ec2.md)                      |              AWS EC2 기능을 정리했습니다.               |
 | `5`  |                     [how to make docker by using linux](https://dynamic-currant-6c5.notion.site/774379954b6b453daf762b153552e2b5)                      |             도커는 어떻게 리눅스를 통해 만들어졌는지에 대해 정리했습니다.           |
 | `6`  |                     [how to use helm](https://dynamic-currant-6c5.notion.site/Helm-ef29181d18f14d7d999ce45fcf85769e)                      |             helm에 대해 정리했습니다.           |
+| `7`  |                     [VPC](https://dynamic-currant-6c5.notion.site/VPC-f4069ec518ac4989b4f202f7f2e1abaa)                      |              AWS vpc 기능을 정리했습니다.               |
