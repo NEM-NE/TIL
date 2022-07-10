@@ -15,3 +15,4 @@
 | `5`  |                   [스프링 IoC](./ioc.md)                   |                   자바에서 IoC에 대한 이해를 기록했습니다.                    |
 | `6`  |                   [Generic, Enum, Annotation](https://dynamic-currant-6c5.notion.site/Generic-Enum-Annotation-2f88b8dadf0242669ad60e3452e2dc33)                   |                   Generic, Enum, Annotation에 대한 이해를 기록했습니다.                    |
 | `7`  |                   [Lambda, Stream](https://dynamic-currant-6c5.notion.site/338ce6bc8068409182b07743fef2bcdb)                   |                   Lambda, Stream에 대한 이해를 기록했습니다.                    |
+| `8`  |                   [자바 GC 성능 최적화](https://dynamic-currant-6c5.notion.site/898bb26eb4e5461c95475fbe066d9baa)                   |                   자바 GC 성능 최적화에 대한 이해를 기록했습니다.                    |
