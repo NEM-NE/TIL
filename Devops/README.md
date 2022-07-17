@@ -18,3 +18,4 @@
 | `8`  |                     [RDS](https://dynamic-currant-6c5.notion.site/RDS-287b6736a3674f28b1c71e7130ac1a48)                      |              AWS RDS 기능을 정리했습니다.               |
 | `9`  |                     [Monitoring & Prometheus](https://dynamic-currant-6c5.notion.site/5ea18b595faf41559252f3aa208e2e64)                      |              모니터링과 프로메티우스에 대해 정리했습니다.               |
 | `10`  |                     [Skaffold & ArgoCD](https://dynamic-currant-6c5.notion.site/Skaffold-ArgoCD-bc4ec6eca10e42feabe9e0a331e97d8e)                      |             Skaffold와 ArgoCD에 대해 정리했습니다.               |
+| `11`  |                     [EKS](https://dynamic-currant-6c5.notion.site/EKS-4cc298e14d864ec4bc7b2c6ccec55a60)                      |             EKS에 대해 정리했습니다.               |
