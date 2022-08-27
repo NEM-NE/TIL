@@ -21,3 +21,4 @@
 | `11`  |                     [EKS](https://dynamic-currant-6c5.notion.site/EKS-4cc298e14d864ec4bc7b2c6ccec55a60)                      |             EKS에 대해 정리했습니다.               |
 | `12`  |                     [Route53에서 Root Domain을 www로 Redirection 하기](https://dynamic-currant-6c5.notion.site/Route53-Root-Domain-www-Redirection-a85f59366b74459f82d59b300a8b8c8a)                      |            Route53에서 Root Domain을 www로 Redirection 하기               |
 | `13`  |                     [Helm 문법 공부](https://dynamic-currant-6c5.notion.site/helm2-2efd2e18876c4299b1ee1030580001ff)                      |             Helm 문법에 대해 정리했습니다.               |
+| `13`  |                     [Fluent Bit](https://dynamic-currant-6c5.notion.site/fluent-bit-efdce8143c2448e4a224829e0bf8e694)                      |             Fluent Bit에 대해 정리했습니다.               |
