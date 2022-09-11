@@ -23,3 +23,4 @@
 | `13` |                                 [Helm 문법 공부](https://dynamic-currant-6c5.notion.site/helm2-2efd2e18876c4299b1ee1030580001ff)                                 |                Helm 문법에 대해 정리했습니다.                 |
 | `14` |                                [Fluent Bit](https://dynamic-currant-6c5.notion.site/fluent-bit-efdce8143c2448e4a224829e0bf8e694)                                 |                Fluent Bit에 대해 정리했습니다.                |
 | `15` |                      [App of Apps 패턴 적용기](https://dynamic-currant-6c5.notion.site/ArgoCD-App-Of-Apps-5403768b289a46a18297afb663e8ab22)                      |                Fluent Bit에 대해 정리했습니다.                |
+| `15` |                      [Terraform 정리](https://dynamic-currant-6c5.notion.site/Terraform-1ca1d06f0efd421f8265f818616d6e52)                      |                Terraform에 대해 정리했습니다.                |
