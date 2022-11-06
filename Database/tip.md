@@ -242,6 +242,16 @@ https://ponyozzang.tistory.com/656
 DECLARE variable_name (varchar, numeric, ..)
 variable_name := 'Hello, World!'
 
+### 날짜 비교
+
+| 함수 |                     내용                     |                      예시                       |
+| ---- | :------------------------------------------: | :---------------------------------------------: |
+| `DATE_FORMAT(날짜, 'FORMAT')`  |      날짜를 해당 포맷으로 변경       |   DATE_FORMAT(날짜, '%Y-%m-%d')    |
+| `DATE(날짜)`  |      날짜를 연도-월-일로 변환      |   DATE(날짜)    |
+| `YEAR(날짜)`  |      날짜를 연도 반환       |   YEAR(날짜)    |
+| `MONTH(날짜)`  |      날짜의 월 반환       |   MONTH(날짜)    |
+
+
 ## 기타 팁
 
 #### SQL 쿼리문 동작 순서
