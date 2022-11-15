@@ -26,3 +26,4 @@
 | `16` |                      [Terraform 정리](https://dynamic-currant-6c5.notion.site/Terraform-1ca1d06f0efd421f8265f818616d6e52)                      |                Terraform에 대해 정리했습니다.                |
 | `17` |                      [helm hooks을 사용하여 Namespace에 istio-injection label 설정하기](https://dynamic-currant-6c5.notion.site/helm-hooks-Namespace-istio-injection-label-82bb0390bff6461a90d1619c676cea36)                      |               Istio-injection 문제해결에 대해 정리했습니다.                |
 | `18` |                      [HPA](https://dynamic-currant-6c5.notion.site/HPA-ba27a619190e473aadbf317f53ddbcd2)                      |                Kubernetes HPA에 대해 정리했습니다.                |
+| `19` |                      [Prometheus Adapter](https://dynamic-currant-6c5.notion.site/Prometheus-Adapter-Prometheus-Metrics-HPA-952ee3c1ba414ae59abdb7927fdfc42d)                      |                Prometheus Adapter에 대해 정리했습니다.                |
