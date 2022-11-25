@@ -268,3 +268,16 @@ variable_name := 'Hello, World!'
 #### Having vs Where
 
 Where이 먼저 동작하기 때문에 성능이 더 좋으며, 초반에 필터링이 많이 될 수 있게 작성하는 것이 좋다.
+
+
+#### VARCHAR vs CHAR vs TEXT
+
+CHAR는 고정형 VARCHAR는 가변형이다.
+즉, CHAR 어떤 크기의 문자열을 저장해도 동일한 크기를 저장하지만 VARCHAR는 문자열 크기에 맞춰 저장한다.
+또한 CHAR는 VARCHAR와는 다르게 저장할 수 있는 크기가 작다.
+
+CHAR -> 255 byte
+VARCHAR -> 65535 byte
+
+반면에 TEXT는 VARCHAR와 동일한 사이즈를 가지지만 크기를 설정하지 않는점과 index로 활용할 수 없다는 특징을 가진다.
+
