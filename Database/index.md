@@ -40,6 +40,7 @@ Range Scan => 테이블에 포함된 일부 Record들만 읽음.
 * 인덱스를 관리하기 위해 보통 DB의 10% 해당하는 공간 사용
 * 인덱스를 관리하기 위해 추가적인 작업 필요
 * 잘못된 인덱스를 사용하면 성능이 저하되는 역효과가 발생 할 수 있음 (UPDATE나 DELETE를 하면 인덱스는 사라지는 것이 아닌 '사용하지 않음'이라고 변경됨. 즉, 공간은 계속 차지)
+* INSERT문을 실행하면 추가적으로 index를 생성해줘야함
 
 <br><br>
 
@@ -57,13 +58,27 @@ Range Scan => 테이블에 포함된 일부 Record들만 읽음.
 
 ### B+Tree
 
+Mysql innodb는 b+tree를 사용한다.
+
+BST를 사용해도 좋을 것 같지만, 최악의 경우 O(n)의 성능을 보이기 때문에 Balanced tree(최악의 경우에도 O(logN) 보장)를 고려하게 되었다.
+
+Balanced tree는 b-tree, red black tree 등이 있지만 red black tree 같은 경우는 리프노드에 데이터가 1개뿐이기에 데이터 조회 시에 높이가 높아져 b-tree와 비교해서 성능이 좋지 않다.
+
+그래서 인덱스는 b-tree 자료구조를 사용한다고 볼 수 있고, innodb는 b-tree보다 성능이 향상된 b+tree를 사용한다. 
+
 ![b-tree](https://media.vlpt.us/images/emplam27/post/ddbae2c9-da94-457d-bad8-77ff6791255b/B%ED%8A%B8%EB%A6%AC%20%EA%B8%B0%EB%B3%B8%20%ED%98%95%ED%83%9C.png)
 
 기존 2개 이상의 자식 노드를 가질 수 있는 b-tree를 개선시킨 자료구조 / 시간복잡도 O(logN)
 
 1. leaf 노드에만 Value 값이 있고 나머지 노드는 Key값만 있다.
-2. leaf 노드는 LinkedList로 구성됨. (순차 검색에 용이하기 때문에 <, >를 처리하기 좋음)
+2. leaf 노드는 LinkedList로 구성됨. (순차 검색에 용이하기 때문에 <, >를 처리하기 좋음, 한번의 선형검색으로 조회처리가 가능하다.)
 3. 데이터 노드 크기는 인덱스 노드의 크기와 같지 않아도 된다.
+
+
+B+tree의 장점
+1. 리프 노드를 제외하고 데이터를 담아두지 않기 때문에 메모리를 더 확보함으로써 더 많은 key들을 수용할 수 있다. 하나의 노드에 더 많은 key들을 담을 수 있기에 트리의 높이는 더 낮아진다.(cache hit를 높일 수 있음)
+ 
+2. 풀 스캔 시, B+tree는 리프 노드에 데이터가 모두 있기 때문에 한 번의 선형탐색만 하면 되기 때문에 B-tree에 비해 빠르다. B-tree의 경우에는 모든 노드를 확인해야 한다. 
 
 
 ### Hash Table
